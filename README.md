@@ -96,7 +96,7 @@ sudo systemctl restart novasdr-server
 
 ## Compatibility
 
-Tested against **NovaSDR** as of April 2026.  
+Tested against **NovaSDR 0.3.7** only. Other versions have not been tested — use at your own risk.  
 If a NovaSDR update changes `AudioPanel.tsx` significantly, the patched file may be out of date — restore the backup and wait for an updated installer.
 
 ---
