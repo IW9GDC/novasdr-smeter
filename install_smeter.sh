@@ -1,18 +1,18 @@
 #!/bin/bash
 # NovaSDR S-Meter Mod Installer - IW9GDC
-# Uso: bash install_smeter.sh /path/to/NovaSDR
+# Usage: bash install_smeter.sh /path/to/NovaSDR
 
 NOVASDR_DIR="${1:-.}"
 TARGET="$NOVASDR_DIR/frontend/src/components/receiver/panels/AudioPanel.tsx"
 
 if [ ! -f "$TARGET" ]; then
-  echo "ERRORE: Non trovo $TARGET"
-  echo "Uso: bash install_smeter.sh /path/to/NovaSDR"
+  echo "ERROR: File not found: $TARGET"
+  echo "Usage: bash install_smeter.sh /path/to/NovaSDR"
   exit 1
 fi
 
 cp "$TARGET" "$TARGET.bak"
-echo "Backup salvato in $TARGET.bak"
+echo "Backup saved to $TARGET.bak"
 
 base64 -d << 'B64EOF' > "$TARGET"
 aW1wb3J0IHsgQ2lyY2xlLCBEb3dubG9hZCwgSW5mbywgTWljT2ZmLCBSYWRpbywgU3F1YXJlLCBW
@@ -278,9 +278,9 @@ bWF4LXctWzI0MHB4XSB0ZXh0LXhzIGxlYWRpbmctcmVsYXhlZCI+CiAgICAgICAge3RleHR9CiAg
 ICAgIDwvVG9vbHRpcENvbnRlbnQ+CiAgICA8L1Rvb2x0aXA+CiAgKTsKfQo=
 B64EOF
 
-echo "AudioPanel.tsx aggiornato con S-Meter segmentato!"
+echo "AudioPanel.tsx patched with segmented S-Meter!"
 echo ""
-echo "Per applicare, ricompila il frontend:"
+echo "To apply, rebuild the frontend:"
 echo "  cd $NOVASDR_DIR/frontend && npm run build"
 echo ""
-echo "Poi riavvia novasdr-server."
+echo "Then restart novasdr-server."
