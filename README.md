@@ -99,6 +99,12 @@ If a NovaSDR update changes `AudioPanel.tsx` significantly, the patched file may
 
 ---
 
+## License
+
+The patched `AudioPanel.tsx` is a derivative work of [NovaSDR](https://github.com/Steven9101/NovaSDR) by Steven9101, which is released under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html). This modification is therefore distributed under the same GPL v3 license.
+
+---
+
 ## Author
 
 **Emanuele — IW9GDC**  
